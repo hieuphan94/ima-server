@@ -51,7 +51,6 @@ router.put(constant.router.user.id, (req, res) => {
     user.department = department || user.department;
     user.role = role || user.role;
 
-    console.log(user);
     
     res.json(user);
 })
