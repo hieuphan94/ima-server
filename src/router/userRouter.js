@@ -15,8 +15,8 @@ router.get(constant.router.user.id, (req, res) => {
     if (!user) {
         return res.status(404).send({ err: "not found" });
     }
-    res.json(user);
 
+    res.json(user);
 })
 // Post
 router.post('/', (req, res) => {
@@ -41,19 +41,26 @@ router.put(constant.router.user.id, (req, res) => {
     const user = users.find(e => e.userId === req.params.userId);
     if (!user) {
         return res.status(404).send({ err: "not found" });
+        
     }
     const { username, email, password, department, role } = req.body;
+
     user.username = username || user.username;
     user.email = email || user.email;
     user.password = password || user.password;
     user.department = department || user.department;
     user.role = role || user.role;
+
+    console.log(user);
+    
     res.json(user);
 })
 
 // Delete
 router.delete(constant.router.user.id, (req, res) => {
     const userIndex = users.findIndex(e => e.userId === req.params.userId);
+
+
     if (userIndex === -1) {
         return res.status(404).send('Not found');
     }

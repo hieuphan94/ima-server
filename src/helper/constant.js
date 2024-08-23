@@ -18,9 +18,6 @@ const constant = {
             id: '/:restaurantId/',
         },
     }
-
-
-
 }
 
 module.exports = { constant }

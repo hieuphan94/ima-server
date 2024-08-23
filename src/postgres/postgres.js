@@ -14,4 +14,4 @@ const connection = async() => {
     }
 }
 
-module.exports = { constant }
+module.exports = { connection }
